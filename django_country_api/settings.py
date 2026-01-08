@@ -14,13 +14,11 @@ ALLOWED_HOSTS = [
     "127.0.0.1"
 ]
 
-
-# ✅ CSRF Trusted Origins
+# ✅ CSRF Trusted Origins (match your Render URL exactly)
 CSRF_TRUSTED_ORIGINS = [
     'https://django-country-api-xyza.onrender.com',
-    'http://localhost:5175',
+    'http://localhost:5175',  # React dev server
 ]
-
 
 # ✅ Installed Apps
 INSTALLED_APPS = [
@@ -32,10 +30,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'citizens',
-    'corsheaders',  # ✅ Enable CORS
+    'corsheaders',
 ]
 
-# ✅ Middleware
+# ✅ Middleware (no duplicates)
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -47,10 +45,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-    
-
-
-
 
 ROOT_URLCONF = 'django_country_api.urls'
 
@@ -98,9 +92,7 @@ USE_TZ = True
 # ✅ Static files (Render-ready)
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -116,7 +108,7 @@ REST_FRAMEWORK = {
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5175",
-    "https://django-country-api-pipk.onrender.com",
+    "https://django-country-api-xyza.onrender.com",
 ]
 CORS_ALLOW_METHODS = [
     "GET",
