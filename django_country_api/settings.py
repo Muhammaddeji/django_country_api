@@ -8,13 +8,19 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'dev-secret-key')
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
 # ✅ Allowed Hosts
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [
+    "django-country-api-xyza.onrender.com",
+    "localhost",
+    "127.0.0.1"
+]
+
 
 # ✅ CSRF Trusted Origins
 CSRF_TRUSTED_ORIGINS = [
-    'https://django-country-api-pipk.onrender.com',
-    'http://localhost:5175',  # React dev server
+    'https://django-country-api-xyza.onrender.com',
+    'http://localhost:5175',
 ]
+
 
 # ✅ Installed Apps
 INSTALLED_APPS = [
@@ -34,15 +40,12 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'corsheaders.middleware.CorsMiddleware',
-
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
     
 

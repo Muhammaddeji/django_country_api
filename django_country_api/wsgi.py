@@ -3,8 +3,7 @@ from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault(
     'DJANGO_SETTINGS_MODULE',
-    'gunicorn django_country_api.wsgi:application'
-
+    'django_country_api.settings'
 )
 
 application = get_wsgi_application()
