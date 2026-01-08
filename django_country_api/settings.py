@@ -8,7 +8,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'dev-secret-key')
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
 # ✅ Allowed Hosts
-ALLOWED_HOSTS = ["*"]  # safe for testing; tighten later
+ALLOWED_HOSTS = ["*"]
 
 # ✅ CSRF Trusted Origins
 CSRF_TRUSTED_ORIGINS = [
